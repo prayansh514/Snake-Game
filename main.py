@@ -8,7 +8,8 @@ import time
 # higher order functions are functions in which we can give any functions as input as here in screen.onclick
 screen = Screen()
 screen.setup(600,600)
-screen.bgcolor("black")
+screen.colormode(255)
+screen.bgcolor(40, 44, 52)
 screen.title("My snake game")
 screen.tracer(0)
 
