@@ -5,7 +5,7 @@ from food import Food
 from scoreboard import Scoreboard
 
 import time
-# higher order functions are functions in which we can give any fnunctions as input as here in screen.onclick
+# higher order functions are functions in which we can give any functions as input as here in screen.onclick
 screen = Screen()
 screen.setup(600,600)
 screen.bgcolor("black")
@@ -43,15 +43,19 @@ while(game_is_on):
     x_cor = snake.snake[0].xcor()
     y_cor = snake.snake[0].ycor()
     if x_cor > 280 or x_cor<-300 or y_cor>280 or y_cor<-280:
-        scoreboard.game_over()
-        game_is_on = False
+        scoreboard.reset()
+        scoreboard.clear()
+        snake.reset()
+        scoreboard.display()
 
 
     # detect collision with tail
     for segment in snake.snake[1:]:
         if(snake.snake[0].distance(segment) < 10):
-            game_is_on = False
-            scoreboard.game_over()
+            scoreboard.reset()
+            scoreboard.clear()
+            snake.reset()
+            scoreboard.display()
 
 
 

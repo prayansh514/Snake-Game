@@ -37,7 +37,16 @@ class Snake:
         if (self.snake[0].heading() != 0):
             self.snake[0].setheading(180)
 
-        
+    def reset(self):
+        for segment in self.snake:
+            segment.goto(-900,-900)
+
+        self.snake.clear()
+        for i in range(3):
+            self.add_segment(0 - 20 * i, 0)
+
+
+
 
 
 
